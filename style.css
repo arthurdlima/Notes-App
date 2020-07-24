@@ -1,0 +1,59 @@
+/* Nav bar */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+.nav-style, .footer {
+    font-family: 'Quicksand', sans-serif;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.navbar-brand {
+    padding: 1rem;
+}
+
+.navbar-toggler {
+    margin-right: 1rem;
+}
+
+.nav-link {
+
+    text-align: center;
+}
+
+.nav-item {
+    padding: 1rem 0;
+}
+
+.nav-item:hover {
+    background-color: #393939;
+}
+
+/*Background Image*/
+body {
+    background: url("back-img.jpg") no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*Jumbotron*/
+.jumbotron {
+    margin: 5rem;
+    text-align:center;
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/*for footer */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.footer {
+    color: white;
+    padding-top: 1rem;
+    text-align: center;
+    position: absolute;
+    /*width 100 since the footer is using postion absolute.
+    it will turn the block element to inline*/
+    width: 100%;
+    bottom: 0;
+}
