@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 .nav-style, .footer {
     font-family: 'Quicksand', sans-serif;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 1);
 }
 
 .navbar-brand {
@@ -14,7 +14,6 @@
 }
 
 .nav-link {
-
     text-align: center;
 }
 
@@ -35,7 +34,7 @@ body {
 
 /*Jumbotron*/
 .jumbotron {
-    margin: 5rem;
+    margin: 12rem 5rem;
     text-align:center;
     color: white;
     background: rgba(0, 0, 0, 0.4);

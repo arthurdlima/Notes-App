@@ -14,7 +14,7 @@
   <body>
       <!-- Nav -->
       <div class="container-fluid px-0">
-          <nav class="navbar navbar-expand-md navbar-dark px-0 py-0 nav-style">
+          <nav class="navbar fixed-top navbar-expand-md navbar-dark px-0 py-0 nav-style">
             <a class="navbar-brand" href="#">Notas Online</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -34,12 +34,97 @@
              <!-- to use d-flex correctly, set width to 100% -->
               <ul class="navbar-nav w-100 d-flex justify-content-end">
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Login</span></a>
+                  <a class="nav-link" href="#loginModal" data-toggle="modal">Login</span></a>
                 </li>
               </ul>
             </div>
           </nav>
       </div>
+
+      <!-- Login form -->
+        <form method="post" id="loginForm">
+            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Login</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Will be used later in javascript, php and ajax-->
+                        <div id="loginMessage">
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loginEmail" class="sr-only">Email:</label>
+                            <!-- the id is used, in this case, for the for label-->
+                            <input id="loginEmail" type="text" class="form-control" name="loginEmail"
+                            placeholder="Endereço de email" maxlength="50">
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword" class="sr-only">Password:</label>
+                            <!-- the id is used, in this case, for the for label-->
+                            <input id="loginPassword" type="text" class="form-control" name="loginPassword"
+                            placeholder="Senha" maxlength="30">
+                        </div>
+                        <div class="form-check w-100 d-flex">
+                          <div class="mr-auto">
+                              <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe">
+                              <label class="form-check-label" for="rememberMe">Lembrar senha</label>
+                          </div>
+                          <a href="#forgotPasswordModal" data-toggle="modal" data-dismiss="modal" >Esqueceu a senha?</a>
+                        </div>
+                    </div>
+                    <div class="modal-footer w-100 d-flex">
+                        <button type="button" class="btn btn-secondary mr-auto" data-target="#signUpModal" data-toggle="modal" data-dismiss="modal">Registrar</button>
+                        <div class="">
+                            <button class="btn btn-primary" name="login" type="submit" value="Login">Login</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </form>
+
+        <!-- forgot password -->
+          <form method="post" id="forgotPasswordForm">
+              <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Esqueceu sua senha? insira seu email:</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                          <!-- Will be used later in javascript, php and ajax-->
+                          <div id="forgotPasswordMessage">
+
+                          </div>
+
+                          <div class="form-group">
+                              <label for="forgotEmail" class="sr-only">Email:</label>
+                              <!-- the id is used, in this case, for the for label-->
+                              <input id="forgotEmail" type="text" class="form-control" name="forgotEmail"
+                              placeholder="Endereço de email" maxlength="50">
+                          </div>
+                      </div>
+                      <div class="modal-footer w-100 d-flex">
+                          <button type="button" class="btn btn-secondary mr-auto" data-target="#signUpModal" data-toggle="modal" data-dismiss="modal">Registrar</button>
+                          <div class="">
+                              <button class="btn btn-primary" name="forgotPassword" type="submit" value="Submit">Enviar</button>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </form>
 
       <!-- Sign up form -->
         <form method="post" id="signUpForm">
@@ -54,14 +139,14 @@
                     </div>
                     <div class="modal-body">
                         <!-- Will be used later in javascript, php and ajax-->
-                        <div id="signupmessage">
+                        <div id="signUpMessage">
 
                         </div>
 
                         <div class="form-group">
-                            <label for="username" class="sr-only">Username:</label>
+                            <label for="userName" class="sr-only">Username:</label>
                             <!-- the id is used, in this case, for the for label-->
-                            <input id="username" type="text" class="form-control" name="username"
+                            <input id="userName" type="text" class="form-control" name="userName"
                             placeholder="Nome de usuário" maxlength="30">
                         </div>
                         <div class="form-group">
