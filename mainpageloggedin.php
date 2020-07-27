@@ -9,7 +9,29 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 
-    <title>Notas Online</title>
+    <title>Minhas notas</title>
+    <style media="screen">
+        #container {
+            margin-top: 10rem;
+        }
+        .buttonss {
+            margin-bottom: 1rem;
+        }
+        #notePad, #done, #allNotes {
+            display: none;
+        }
+        textarea {
+            width: 100%;
+            max-width: 100%;
+            font-size: 1.2rem;
+            line-height: 1.6rem;
+
+            border-left-width: 1.2rem;
+            border-color: grey;
+            color: grey;
+            padding: 1rem;
+        }
+    </style>
 </head>
 <body>
     <!-- Nav -->
@@ -21,8 +43,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Início <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Perfil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Ajuda</a>
@@ -30,11 +52,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contato</a>
                     </li>
+                    <li class="nav-item active">
+                        <!-- text-nowrap to prevent line break -->
+                        <a class="nav-link text-nowrap" href="#">Minhas Notas <span class="sr-only">(current)</span></a>
+                    </li>
                 </ul>
                 <!-- to use d-flex correctly, set width to 100% -->
                 <ul class="navbar-nav w-100 d-flex justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link" href="#loginModal" data-toggle="modal">Entrar</span></a>
+                        <a class="nav-link" href="#">Usuário: <b>nome</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sair</span></a>
                     </li>
                 </ul>
             </div>
@@ -177,14 +206,28 @@
         </div>
     </form>
 
-    <!-- Jombotron with sign up button -->
-    <div class="jumbotron" id="myContainer">
-        <h1 class="display-4">Notas Online!</h1>
-        <p class="lead">Notas Online é um bom ajudante para gerenciar suas anotações.</p>
-        <hr class="my-4">
-        <p>Crie sua conta agora!</p>
-        <a class="btn btn-primary btn-lg" data-target="#signUpModal" data-toggle="modal" href="#" role="button">Criar conta</a>
+    <!-- Container -->
+    <div class="container" id="container">
+        <div class="row">
+            <div class="col">
+                <div class="d-flex buttonss">
+                    <div class="mr-auto">
+                        <button id="addNote" type="button" class="btn btn-primary">Adicionar nota</button>
+                        <button id="allNotes" type="button" class="btn btn-primary">Notas</button>
+                    </div>
+                    <button id="edit" type="button" class="btn btn-primary">Editar</button>
+                    <button id="done" type="button" class="btn btn-success">Finalizar</button>
+                </div>
+                <div id="notePad">
+                    <textarea rows="10"></textarea>
+                </div>
+                <div id="notes" class="notes">
+                    <!-- Ajax call to php file -->
+                </div>
+            </div>
+        </div>
     </div>
+
 
     <!-- Footer -->
     <div class="footer">
