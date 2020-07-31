@@ -67,7 +67,7 @@
                         <div class="form-group">
                             <label for="loginPassword" class="sr-only">Password:</label>
                             <!-- the id is used, in this case, for the for label-->
-                            <input id="loginPassword" type="text" class="form-control" name="loginPassword"
+                            <input id="loginPassword" type="password" class="form-control" name="loginPassword"
                             placeholder="Senha" maxlength="30">
                         </div>
                         <div class="form-check w-100 d-flex">
@@ -158,13 +158,13 @@
                         <div class="form-group">
                             <label for="password" class="sr-only">Password:</label>
                             <!-- the id is used, in this case, for the for label-->
-                            <input id="password" type="text" class="form-control" name="password"
+                            <input id="password" type="password" class="form-control" name="password"
                             placeholder="Escolha uma senha" maxlength="30">
                         </div>
                         <div class="form-group">
                             <label for="password2" class="sr-only">Password2:</label>
                             <!-- the id is used, in this case, for the for label-->
-                            <input id="password2" type="text" class="form-control" name="password2"
+                            <input id="password2" type="password" class="form-control" name="password2"
                             placeholder="Confirme a senha" maxlength="30">
                         </div>
                     </div>
@@ -180,7 +180,7 @@
     <!-- Jombotron with sign up button -->
     <div class="jumbotron" id="myContainer">
         <h1 class="display-4">Notas Online!</h1>
-        <p class="lead">Notas Online é um bom ajudante para gerenciar suas anotações.</p>
+        <p class="lead">Use Notas Online para gerenciar suas anotações.</p>
         <hr class="my-4">
         <p>Crie sua conta agora!</p>
         <a class="btn btn-primary btn-lg" data-target="#signUpModal" data-toggle="modal" href="#" role="button">Criar conta</a>
@@ -193,9 +193,14 @@
         </div>
     </div>
 
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!-- changed bootstrap jquery to full version from cdn -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <script src="index.js"></script>
+
 </body>
 </html>
