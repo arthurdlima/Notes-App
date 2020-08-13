@@ -4,7 +4,7 @@
     session_start();
     // connect to database
     include("db_connection.php");
-
+    
     //define error messages
     $missingUsername = "<p><strong>Por favor insira um nome de usuário.</strong></p>";
     $missingEmail = "<p><strong>Por favor insira um email.</strong></p>";
@@ -62,6 +62,10 @@
     $username = mysqli_real_escape_string($link, $username);
     $email = mysqli_real_escape_string($link, $email);
     $password = mysqli_real_escape_string($link, $password);
+    //hash hpassword
+    //$password = md5($password);
+    $password = hash('sha256', $password);
+    ;//
 
     //If username exists in the users table, print error
     //Obs: to use php variable in the statement, need double quotes
@@ -99,7 +103,29 @@
     $activationKey = bin2hex(openssl_random_pseudo_bytes(16));
 
     //Insert user details and activation code in the users table
+    $sql = "INSERT INTO users (`username`, `email`, `password`, `activation`)
+            VALUES ('$username', '$email', '$password', '$activationKey')";
 
+    $result = mysqli_query($link, $sql);
+
+    if(!$result){
+        echo "<div class='alert alert-danger'>Erro ao inserir dados do usuário no banco.</div>";
+        exit;
+    }
+
+    //Send user email with a link to activate.php with their email
+    //and activation code
+    $message = "Por favor clique nesse link para ativar sua conta:\n\n";
+    $message .= "http://arthurdlima.com/App_Notas_Online/activate.php?email=".urlencode($email)."&key=$activationKey";
+    //mail will return true or false
+    if(mail($email, "Confirme sua conta", $message, "From:"."arthur-david@hotmail.com")){
+        echo "<div class='alert alert-success'>Obrigado por se registrar! Um email de
+        confirmação foi enviado para $email. Por favor clique no link de ativação
+        para ativar sua conta.</div>";
+
+    } else {
+        echo "<div class='alert alert-danger'>Ocorreu algum erro ao enviar email</div>";
+    }
 
 
 
